@@ -3,14 +3,12 @@ let func = (input) => input.toUpperCase();
 module.exports = func;
 
 // Higher Order Functions
-
 let repeat = (operation, num) => {
   return operation() * num;
 };
 module.exports = repeat;
 
-// // Map
-
+// Map
 function doubleAll(numbers) {
   return numbers.map((x) => x * 2);  // Also could be done in one line: const doubleAll = numbers.map(x => x * 2)
 }
