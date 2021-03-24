@@ -1,2 +1,2 @@
 # functional-javascript
-practising some functional javascriptthrough NodeSchool's Functional Javascript course. 
+practising some functional javascript through NodeSchool's Functional Javascript course. 
