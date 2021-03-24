@@ -11,7 +11,7 @@ module.exports = repeat;
 
 // Map
 function doubleAll(numbers) {
-  return numbers.map((x) => x * 2);  // Also could be done in one line: const doubleAll = numbers.map(x => x * 2)
+  return numbers.map((x) => x * 2); // Also could be done in one line: const doubleAll = numbers.map(x => x * 2)
 }
 module.exports = doubleAll;
 
@@ -28,11 +28,21 @@ The function should return an array containing the messages themselves, without 
     {
       message: 'Esse id amet quis eu esse aute officia ipsum.' // random
     } */
-const getShortMessages = (messages) => messages
-  .filter(m => m.message.length <= 50)
-  .map(m => m.message);
+const getShortMessages = (messages) =>
+  messages.filter((m) => m.message.length <= 50).map((m) => m.message);
 
 module.exports = getShortMessages;
 
-//Every Some
+//Return a function that takes a list of valid users, and returns a function that returns true if all of the supplied users exist in the original list of users. You only need to check that the ids match.
 
+function checkUsersValid(goodUsers) {
+  return function allUsersValid(submittedUsers) {
+    return submittedUsers.every(function (submittedUser) {
+      return goodUsers.some(function (goodUser) {
+        return goodUser.id === submittedUser.id;
+      });
+    });
+  };
+}
+
+module.exports = checkUsersValid;
